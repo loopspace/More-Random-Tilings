@@ -21,8 +21,7 @@ function init() {
 	for (var j = 0; j < ysize; j++) {
 	    tile = document.createElementNS("http://www.w3.org/2000/svg", 'use');
 	    tile.setAttribute('href', '#tile' + getRandomInt(1,6));
-	    tile.setAttribute('x', i*10);
-	    tile.setAttribute('y', j*10);
+	    tile.setAttribute('transform', 'translate(5 5) translate(' + (i*10) + ' ' + (j*10) + ') rotate(' + (90*getRandomInt(0,4)) + ') translate(-5 -5)');
 	    tiles.appendChild(tile);
 	    grid[i][j] = tile;
 	}
@@ -43,6 +42,6 @@ function changeTile() {
     var x = n % grid.length;
     var y = (n - x)/grid.length;
 
-    console.log(x,y);
     grid[x][y].setAttribute('href', '#tile' + getRandomInt(1,6));
+    grid[x][y].setAttribute('transform', 'translate(5 5) translate(' + (x*10) + ' ' + (y*10) + ') rotate(' + (90*getRandomInt(0,4)) + ') translate(-5 -5)');
 }
