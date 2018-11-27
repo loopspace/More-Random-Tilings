@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      SVG Tiling
+    </title>
+    <link href="tiling.css" rel="stylesheet">
+    <script type="text/javascript" src="tiling.js"></script>
+  </head>
+  <body>
+    <svg id="tiling" width="600" height="600">
+      <defs>
+	<symbol id="tile1" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 h  2 v -2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 h  4 v -4 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  1 h  4 v  4 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  3 h  2 v  2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -3 h -2 v -2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -1 h -4 v -4 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5  1 h -4 v  4 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5  3 h -2 v  2 " vector-effect="non-scaling-stroke" />
+	</symbol>
+	<symbol id="tile2" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 a 3 3 0 1 1 0 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 a 1 1 0 1 1 0 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -3 a 3 3 0 1 0 0 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -1 a 1 1 0 1 0 0 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -3  5 a 3 3 0 1 1 6 0 " vector-effect="non-scaling-stroke" />
+	  <path d="M -1  5 a 1 1 0 1 1 2 0 " vector-effect="non-scaling-stroke" />
+	  <path d="M -3 -5 a 3 3 0 1 0 6 0 " vector-effect="non-scaling-stroke" />
+	  <path d="M -1 -5 a 1 1 0 1 0 2 0 " vector-effect="non-scaling-stroke" />
+	</symbol>
+	<symbol id="tile3" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 a 3 3 0 1 1 0 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 a 1 1 0 1 1 0 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -3 -5 a 3 3 0 1 0 6 0 " vector-effect="non-scaling-stroke" />
+	  <path d="M -1 -5 a 1 1 0 1 0 2 0 " vector-effect="non-scaling-stroke" />
+	  <path d="M -3  5 a 8 8 0 0 1 8 -8 " vector-effect="non-scaling-stroke" />
+	  <path d="M -1  5 a 6 6 0 0 1 6 -6 " vector-effect="non-scaling-stroke" />
+	  <path d="M  1  5 a 4 4 0 0 1 4 -4 " vector-effect="non-scaling-stroke" />
+	  <path d="M  3  5 a 2 2 0 0 1 2 -2 " vector-effect="non-scaling-stroke" />
+	</symbol>
+	<symbol id="tile4" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 h  2 m 2 0 h 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 h  2 m 2 0 h 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  1 h  6 m 2 0 h 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  3 h  6 m 2 0 h 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  3 -5 v  2 m 0 2 v 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M  1 -5 v  2 m 0 2 v 6 " vector-effect="non-scaling-stroke" />
+	  <path d="M -1 -5 v  6 m 0 2 v 2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -3 -5 v  6 m 0 2 v 2 " vector-effect="non-scaling-stroke" />
+	</symbol>
+	<symbol id="tile5" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 a 2 2 0 0 0 2 -2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 a 4 4 0 0 0 4 -4 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  3 a 2 2 0 0 1 2  2 " vector-effect="non-scaling-stroke" />
+	  <path d="M -5  1 a 4 4 0 0 1 4  4 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -3 a 2 2 0 0 1 -2 -2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -1 a 4 4 0 0 1 -4 -4 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5  3 a 2 2 0 0 0 -2  2 " vector-effect="non-scaling-stroke" />
+	  <path d="M  5  1 a 4 4 0 0 0 -4  4 " vector-effect="non-scaling-stroke" />
+	</symbol>
+	<symbol id="tile6" width="10" height="10" viewBox="-5 -5 10 10">
+	  <path d="M -5 -3 h .414 l 3 3 l -3 3 h -.414 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M -5 -1 l 1 1 l -1 1 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -3 h -.414 l -3 3 l 3 3 h .414 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M  5 -1 l -1 1 l 1 1 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M -3 -5 v .414 l 3 3 l 3 -3 v -.414 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M -1 -5 l 1 1 l 1 -1 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M -3  5 v -.414 l 3 -3 l 3 3 v .414 "
+		vector-effect="non-scaling-stroke" />
+	  <path d="M -1  5 l 1 -1 l 1 1 "
+		vector-effect="non-scaling-stroke" />
+	</symbol>
+      </defs>
+      <g id="grid" stroke="black" fill="none" transform="scale(10)">
+      </g>
+    </svg>
+  </body>
+</html>
